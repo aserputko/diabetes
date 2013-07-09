@@ -1,26 +1,46 @@
-/*global describe, it */
+/*global describe, it, require, beforeEach */
 'use strict';
-describe('Tests for AAAA', function () {
-	var Model;
-	require([
-		'jquery',
-		'underscore',
-		'backbone',
-		'models/application-model'
-	], function($, _, Backbone, Unit) {
-		debugger;Model =  Unit
-	});
+define(function(require) {
+	describe('Tests for AAAA', function () {
+		
+		var ApplicationModel = require('application-model');
 
-	beforeEach(function () {
-		debugger
-		this.model = new Model();
-	});
+		beforeEach(function () {
+			this.model = new ApplicationModel();
+		});
 
-	it('should run here few assertions1', function () {
-		debugger; this.model;
-	});
-	it('should run here few assertions2');
-	it('should run here few assertions3');
+		describe('lalalala', function () {
+			it('should create instance with default attributes', function () {
+				var attributes
+				  , size;
 
-	
+				attributes 	= this.model.attributes;
+				size 		= _.size(attributes);
+
+				expect(size).to.be.equal(0);
+			});
+			it('should create instance with default attributes', function () {
+				var attributes
+				  , size;
+
+				attributes 	= this.model.attributes;
+				size 		= _.size(attributes);
+
+				expect(size).to.be.equal(0);
+			});
+			it('should create instance with default attributes', function () {
+				var attributes
+				  , size;
+
+				attributes 	= this.model.attributes;
+				size 		= _.size(attributes);
+
+				expect(size).to.be.equal(0);
+			});
+		});
+
+		it('dsdsd', function () {
+
+		});
+	});
 });
