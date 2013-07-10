@@ -17,7 +17,7 @@
   <script data-main="app/scripts/main" src="app/bower_components/requirejs/require.js"></script>
 
 	<script>
-		mocha.setup({ui: 'bdd', ignoreLeaks: true});
+		mocha.setup({ui: 'bdd', ignoreLeaks: true, bail: false});
 		expect = chai.expect;
 
 		var upDirs = '../../';
