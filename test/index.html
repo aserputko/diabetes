@@ -1,12 +1,39 @@
 <!doctype html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mocha Spec Runner</title>
-    <link rel="stylesheet" href="lib/mocha/mocha.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Mocha Spec Runner</title>
+  <link rel="stylesheet" href="lib/mocha/mocha.css">
 </head>
 <body>
-    <div id="mocha"></div>
-    <script data-main="SpecRunner.js" src="../app/bower_components/requirejs/require.js"></script>
+  <div id="mocha"></div>
+  <script src="lib/chai.js"></script>
+  <script src="lib/mocha/mocha.js"></script>
+	<!-- Requires symbolic link from app/script -> test/script since connect.test gets mounted on /test
+    in tests/ did:
+    $ ln -s ../app .
+    Also set mocha.all.options.run to false in Gruntfile.js
+  -->
+  <script data-main="app/scripts/main" src="app/bower_components/requirejs/require.js"></script>
+
+	<script>
+		mocha.setup({ui: 'bdd', ignoreLeaks: true});
+		expect = chai.expect;
+
+		var upDirs = '../../';
+		var specs = upDirs + 'spec/';
+
+		require([
+      specs + 'game-spec',
+      specs + 'test'
+  	], function(
+        gameSpec,
+        test) {
+
+		    // below contains mocha.run()
+		    require([upDirs + 'runner/mocha']);
+		});
+	</script>
+
 </body>
 </html>
