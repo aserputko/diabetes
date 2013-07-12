@@ -27,7 +27,14 @@ require.config({
 });
 
 require([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'views/bread-unit-collection-view'
+], function (Backbone, BreadUnitCollectionView) {
+    var $el = $('#container'), view;
+
+    view = new BreadUnitCollectionView();
+    $el.html(view.render().el);
+    view.sync();
+    
     Backbone.history.start();
 });
