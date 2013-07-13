@@ -12,6 +12,12 @@ define([
 
     var BreadUnitCollectionView = Backbone.View.extend({
 
+        id: 'bread-unit-items',
+
+        tagName: 'ul',
+
+        className: 'nav nav-tabs nav-stacked',
+
         template: JST['app/scripts/templates/bread-unit-collection-view.ejs'],
 
         /**
@@ -59,7 +65,7 @@ define([
          */
 		addOne: function (model) {
 			var view = new BreadUnitView({model: model});
-			this.$('ul').append(view.render().el);
+			this.$el.append(view.render().el);
 		}
 
     });

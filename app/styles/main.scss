@@ -6,26 +6,12 @@ body {
 	background: #ecf8ff;
 }
 
+
+@import 'bread-unit-table/search';
+
 #container {
 	padding-right: 0;
 	padding-left: 0;
-
-	#search {
-
-		margin-bottom: 0px;
-
-		input[type=search] {
-			padding-left: 4px;
-			padding-right: 4px;
-			margin: 5px;
-			width: 98%;
-			font-size: 16px;
-			@include border-radius(5px);
-		}
-	}
-	input[type=search]::-webkit-search-cancel-button {
-		-webkit-appearance: searchfield-cancel-button;
-	}
 }
 
 #bread-unit-items {
@@ -49,6 +35,15 @@ body {
 		a:hover {
 			background: #005682;
 		}
+	}
+}
+
+@media (max-width: 767px) {
+
+	// Padding to set content in a bit
+	body {
+		padding-right: 0;
+		padding-left: 0;
 	}
 }
 

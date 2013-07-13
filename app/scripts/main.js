@@ -28,13 +28,12 @@ require.config({
 
 require([
     'backbone',
-    'views/bread-unit-collection-view'
-], function (Backbone, BreadUnitCollectionView) {
+    'views/application-view'
+], function (Backbone, ApplicationView) {
     var $el = $('#container'), view;
 
-    view = new BreadUnitCollectionView();
-    $el.html(view.render().el);
-    view.sync();
+    view = new ApplicationView({el: $el});
+    view.render();
     
     Backbone.history.start();
 });

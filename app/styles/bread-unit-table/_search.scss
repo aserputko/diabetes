@@ -1,0 +1,21 @@
+.diabetes {
+
+	.search {
+
+		margin-bottom: 0px;
+		padding-right: 20px;
+		background: #13a7c7;
+
+		input[type=search] {
+			padding-left: 3px;
+			padding-right: 3px;
+			margin: 5px;
+			width: 100%;
+			font-size: 16px;
+			@include border-radius(5px);
+		}
+	}
+	input[type=search]::-webkit-search-cancel-button {
+		-webkit-appearance: searchfield-cancel-button;
+	}
+}
