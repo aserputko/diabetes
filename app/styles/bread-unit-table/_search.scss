@@ -4,13 +4,13 @@
 
 		margin-bottom: 0px;
 		padding-right: 20px;
-		background: #13a7c7;
+		background: $backgroundColor;
 		position: fixed;
 		overflow: visible;
 		width: 100%;
 
 		input[type=search] {
-			padding-left: 3px;
+			padding-left: 0;
 			padding-right: 0;
 			margin: 5px;
 			width: 99%;

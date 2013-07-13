@@ -1,9 +1,10 @@
 @import 'sass-bootstrap/lib/bootstrap';
 @import 'sass-bootstrap/lib/responsive';
 
+$backgroundColor: #13a7c7;
 
 body {
-	background: #ecf8ff;
+	background: $backgroundColor;
 }
 
 
@@ -17,7 +18,6 @@ body {
 
 @media (max-width: 767px) {
 
-	// Padding to set content in a bit
 	body {
 		padding-right: 0;
 		padding-left: 0;
