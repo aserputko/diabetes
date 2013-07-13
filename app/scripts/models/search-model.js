@@ -13,6 +13,12 @@ define([
 			query: ''
 		},
 
+        initialize: function () {
+            this.on('change:query', function () {
+                Backbone.Mediator.pub('SearchModel:change:query', this.getQuery());
+            }, this);
+        },
+
         /** Getters and Setters */
         getPlaceholder: function () {
 			return this.get('placeholder');

@@ -13,6 +13,10 @@ require.config({
             ],
             exports: 'Backbone'
         },
+        mediator: {
+            deps: ['backbone'],
+            exports: 'mediator'
+        },
         bootstrap: {
             deps: ['jquery'],
             exports: 'jquery'
@@ -22,16 +26,18 @@ require.config({
         jquery: '../bower_components/jquery/jquery',
         backbone: '../bower_components/backbone-amd/backbone',
         underscore: '../bower_components/underscore-amd/underscore',
-        rivets: '../bower_components/rivets/rivets',
+        mediator: 'vendor/backbone-mediator',
+        rivets: 'vendor/rivets',
         bootstrap: 'vendor/bootstrap'
     }
 });
 
 require([
     'backbone',
+    'mediator',
     'rivets-config',
     'views/application-view'
-], function (Backbone, rivets, ApplicationView) {
+], function (Backbone, mediator, rivets, ApplicationView) {
     var $el = $('#container'), view;
 
     view = new ApplicationView({el: $el});
