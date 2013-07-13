@@ -42,6 +42,11 @@ require([
 
     view = new ApplicationView({el: $el});
     view.render();
+
+    //TODO: use utilit to recognize devise
+    /mobi/i.test(navigator.userAgent) && !location.hash && setTimeout(function () {
+      if (!pageYOffset) window.scrollTo(0, 1);
+    }, 1000);
     
     Backbone.history.start();
 });
