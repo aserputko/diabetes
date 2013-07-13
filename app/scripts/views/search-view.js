@@ -18,7 +18,6 @@ define([
 
         initialize: function () {
             this.model = new SearchModel();
-            window.model = this.model;
         },
 
         /**

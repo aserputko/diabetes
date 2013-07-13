@@ -11,6 +11,10 @@ define([
 
         model: BreadUnitModel,
 
+        initialize: function () {
+			Backbone.Mediator.sub('SearchModel:change:query', $.proxy(this.filterByName, this));
+        },
+
 		filterByName: function (str) {
 			var result = [];
 
@@ -20,10 +24,16 @@ define([
 					name = model.getName();
 					matches = name.match(str);
 					if (matches) {
+						model.trigger('show');
 						result.push(model);
+					} else {
+						model.trigger('hide');
 					}
 				});
 			} else {
+				this.each(function (model) {
+					model.trigger('show');
+				});
 				result = this.models;
 			}
 

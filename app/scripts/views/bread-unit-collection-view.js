@@ -28,6 +28,7 @@ define([
         initialize: function () {
 			this.collection = new BreadUnitCollection();
 			this.listenTo(this.collection, 'sync', this.addAll);
+            this.listenTo(this.collection, 'filterByName', this.filterByName);
         },
 
         /**
