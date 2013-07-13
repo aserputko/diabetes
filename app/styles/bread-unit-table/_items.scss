@@ -20,6 +20,20 @@ $itemGradient: #1399bd;
 
 			a {
 				color: #ffffff;
+
+
+				.name { 
+					width: 49%;
+					display: inline-block;
+				}
+				.measure {
+					width: 30%;
+					display: inline-block;
+				}
+				.weight {
+					width: 20%;
+					display: inline-block;
+				}
 			}
 
 			a:hover {

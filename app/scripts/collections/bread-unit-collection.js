@@ -3,8 +3,9 @@
 define([
     'underscore',
     'backbone',
-    'models/bread-unit-model'
-], function (_, Backbone, BreadUnitModel) {
+    'models/bread-unit-model',
+    'collections/bu-mock'
+], function (_, Backbone, BreadUnitModel, mock) {
     'use strict';
 
     var BreadUnitCollection = Backbone.Collection.extend({
@@ -22,7 +23,7 @@ define([
 				this.filter(function (model) {
 					var name, matches;
 					name = model.getName();
-					matches = name.match(str);
+					matches = name.toUpperCase().match(str.toUpperCase());
 					if (matches) {
 						model.trigger('show');
 						result.push(model);
@@ -41,158 +42,7 @@ define([
 		},
 
 		sync: function (method, collection, options) {
-			options.success([
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				},
-				{
-					name: 'Name 1'
-				},
-				{
-					name: 'Name 2'
-				},
-				{
-					name: 'Name 3'
-				},
-				{
-					name: 'Name 4'
-				},
-				{
-					name: 'Name 5'
-				}
-			]);
+			options.success(mock);
 		}
     });
 
