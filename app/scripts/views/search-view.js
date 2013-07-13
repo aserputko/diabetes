@@ -4,14 +4,13 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'rivets',
     'templates',
     'models/search-model'
-], function ($, _, Backbone, JST, SearchModel) {
+], function ($, _, Backbone, rivets, JST, SearchModel) {
     'use strict';
 
     var SearchView = Backbone.View.extend({
-
-        tagName: 'form',
 
         className: 'search',
 
@@ -19,6 +18,7 @@ define([
 
         initialize: function () {
             this.model = new SearchModel();
+            window.model = this.model;
         },
 
         /**
@@ -27,6 +27,7 @@ define([
          */
         render: function () {
             this.$el.html(this.template(this.model.attributes));
+
             return this;
         },
 
@@ -37,6 +38,15 @@ define([
             this.off();
             this.$el.remove();
             return this;
+        },
+
+        start: function () {
+            rivets.bind(this.$el, { model: this.model, view: this}, this);
+        },
+
+        setQuery: function (element, self) {
+            var query = $(element.target).val();
+            self.model.setQuery(query);
         }
     });
 

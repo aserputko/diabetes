@@ -31,7 +31,8 @@ define([
         postRender: function () {
             this.$el.append(this.searchView.render().el);
             this.$el.append(this.breadUnitCollectionView.render().el);
-            
+
+            this.searchView.start();
 			this.breadUnitCollectionView.sync();
         },
 
