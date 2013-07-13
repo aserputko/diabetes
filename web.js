@@ -1,16 +1,6 @@
+var gzippo = require('gzippo');
 var express = require('express');
 
-var path = require('path');
-
-app = express();
-
-app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(express.static(path.join(__dirname, 'dist')));
-});
-
-var port = process.env.PORT || 5000;
-
-app.listen(port);
-
-console.log('server started '+port);
+var app = express.createServer(express.logger());
+app.use(gzippo.staticGzip(__dirname + '/dist'));
+app.listen(process.env.PORT || 5000);
