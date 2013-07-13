@@ -5,17 +5,21 @@
 		margin-bottom: 0px;
 		padding-right: 20px;
 		background: #13a7c7;
+		position: fixed;
+		overflow: visible;
+		width: 100%;
 
 		input[type=search] {
 			padding-left: 3px;
-			padding-right: 3px;
+			padding-right: 0;
 			margin: 5px;
-			width: 100%;
+			width: 99%;
 			font-size: 16px;
 			@include border-radius(5px);
 		}
-	}
-	input[type=search]::-webkit-search-cancel-button {
-		-webkit-appearance: searchfield-cancel-button;
+
+		input[type=search]::-webkit-search-cancel-button {
+			-webkit-appearance: searchfield-cancel-button;
+		}
 	}
 }

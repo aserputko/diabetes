@@ -1,0 +1,28 @@
+.diabetes {
+
+	ul {
+
+		margin-top: 40px;
+
+		li {
+			background: #13a7c7; /* Old browsers */
+			background: -moz-linear-gradient(top,  #13a7c7 0%, #1399bd 42%, #13a7c7 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#13a7c7), color-stop(42%,#1399bd), color-stop(100%,#13a7c7)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #13a7c7 0%,#1399bd 42%,#13a7c7 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #13a7c7 0%,#1399bd 42%,#13a7c7 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #13a7c7 0%,#1399bd 42%,#13a7c7 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #13a7c7 0%,#1399bd 42%,#13a7c7 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#13a7c7', endColorstr='#13a7c7',GradientType=0 ); /* IE6-9 */
+
+			cursor: pointer;
+
+			a {
+				color: #ffffff;
+			}
+
+			a:hover {
+				background: #005682;
+			}
+		}
+	}
+}
