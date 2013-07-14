@@ -23,11 +23,11 @@ $itemGradient: #1399bd;
 
 
 				.name { 
-					width: 44%;
+					width: 50%;
 					display: inline-block;
 				}
 				.measure {
-					width: 25%;
+					width: 30%;
 					display: inline-block;
 				}
 				.weight {
@@ -35,7 +35,7 @@ $itemGradient: #1399bd;
 					display: inline-block;
 				}
 				.add {
-					width: 10%;
+					width: 7%;
 					display: inline-block;
 				}
 			}
@@ -43,6 +43,23 @@ $itemGradient: #1399bd;
 			a:hover {
 				background: #005682;
 			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.diabetes ul li a{
+		.name { 
+			width: 48%;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+
+	.diabetes ul li a{
+		.name { 
+			width: 40%;
 		}
 	}
 }
