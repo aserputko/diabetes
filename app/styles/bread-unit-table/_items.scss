@@ -1,0 +1,65 @@
+$itemGradient: #1399bd;
+
+.diabetes {
+
+	ul {
+
+		margin-top: 40px;
+
+		li {
+			background: $backgroundColor; /* Old browsers */
+			background: -moz-linear-gradient(top,  $backgroundColor 0%, $itemGradient 42%, $backgroundColor 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$backgroundColor), color-stop(42%,$itemGradient), color-stop(100%,$backgroundColor)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  $backgroundColor 0%,$itemGradient 42%,$backgroundColor 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  $backgroundColor 0%,$itemGradient 42%,$backgroundColor 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  $backgroundColor 0%,$itemGradient 42%,$backgroundColor 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  $backgroundColor 0%,$itemGradient 42%,$backgroundColor 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$backgroundColor', endColorstr='$backgroundColor',GradientType=0 ); /* IE6-9 */
+
+			cursor: pointer;
+
+			a {
+				color: #ffffff;
+
+
+				.name { 
+					width: 50%;
+					display: inline-block;
+				}
+				.measure {
+					width: 30%;
+					display: inline-block;
+				}
+				.weight {
+					width: 10%;
+					display: inline-block;
+				}
+				.add {
+					width: 7%;
+					display: inline-block;
+				}
+			}
+
+			a:hover {
+				background: #005682;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.diabetes ul li a{
+		.name { 
+			width: 48%;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+
+	.diabetes ul li a{
+		.name { 
+			width: 40%;
+		}
+	}
+}

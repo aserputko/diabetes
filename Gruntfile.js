@@ -45,7 +45,8 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/*.html',
                     '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+                    '<%= yeoman.app %>/img/{,*/}*.{png,jpg,jpeg,gif,webp}'
                 ]
             },
             jst: {
@@ -116,7 +117,7 @@ module.exports = function (grunt) {
         mocha: {
             all: {
                 options: {
-                    run: true,
+                    run: false,
                     urls: ['http://localhost:<%= connect.options.port %>/index.html']
                 }
             }
