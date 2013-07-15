@@ -21,21 +21,11 @@ define([
         },
 
         /**
-         * Put data of Model to template
-         * and render it to DOM.
+         * Render the view template from model data,
+         * and updates this.el with the new HTML.
          */
         render: function () {
             this.$el.html(this.template(this.model.attributes));
-
-            return this;
-        },
-
-        /**
-         * Remove DOM and unbind listeners
-         */
-        remove: function () {
-            this.off();
-            this.$el.remove();
             return this;
         },
 

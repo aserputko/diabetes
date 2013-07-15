@@ -19,13 +19,12 @@ define([
             this.listenTo(this.model, 'show', this.show);
         },
 
+        /**
+         * Render the view template from model data,
+         * and updates this.el with the new HTML.
+         */
         render: function () {
             this.$el.html(this.template(this.model.attributes));
-            return this;
-        },
-
-        remove: function () {
-            this.$el.remove();
             return this;
         },
 

@@ -21,6 +21,12 @@ define([
 			this.on('post-render', this.postRender, this);
         },
 
+        /**
+         * Render the view template from model data,
+         * and updates this.el with the new HTML.
+         * Trigger events 'post-render' to make rendering
+         * when base DOM is presented.
+         */
         render: function () {
 			this.$el.html(this.template());
 
@@ -34,12 +40,7 @@ define([
 
             this.searchView.start();
 			this.breadUnitCollectionView.sync();
-        },
-
-		remove: function () {
-			this.$el.remove();
-			return this;
-		}
+        }
     });
 
     return ApplicationView;

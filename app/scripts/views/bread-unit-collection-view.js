@@ -32,19 +32,12 @@ define([
         },
 
         /**
-         * Render DOM
+         * Render the view template from model data,
+         * and updates this.el with the new HTML.
          */
         render: function () {
 			this.$el.html(this.template());
 			return this;
-        },
-
-        /**
-         * Remove DOM and unbind listeners
-         */
-        remove: function () {
-            // TODO: should remove DOM, unbind events
-            return this;
         },
 
         /**
