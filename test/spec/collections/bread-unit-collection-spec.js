@@ -9,10 +9,10 @@ require(['collections/bread-unit-collection'], function (BreadUnitCollection) {
         it('should add Model instances as objects and arrays', function () {
 			expect(this.collection.length).to.equal(0);
 
-			this.collection.add({name: 'name_1'});
+			this.collection.add({name: 'apple'});
 			expect(this.collection.length).to.equal(1);
 
-			this.collection.add([{name: 'name_2'}, {name: 'name_3'}]);
+			this.collection.add([{name: 'banana'}, {name: 'orange'}]);
 			expect(this.collection.length).to.equal(3);
         });
 
@@ -24,7 +24,7 @@ require(['collections/bread-unit-collection'], function (BreadUnitCollection) {
 			expect(result.length).to.equal(1);
 
 			result = this.collection.filterByName('an');
-			expect(result.length).to.equal(2);  // banana and orange
+			expect(result.length).to.equal(2);
 
 			result = this.collection.filterByName();
 			expect(result.length).to.equal(3);
@@ -51,6 +51,20 @@ require(['collections/bread-unit-collection'], function (BreadUnitCollection) {
 			expect(result.length).to.equal(1);
 
 			result = this.collection.filterByName('orange');
+			expect(result.length).to.equal(1);
+        });
+
+        it('should recognize query in different combinations of 2,3,4...-words', function () {
+			var result;
+			this.collection.add([{name: 'Rye bread'}, {name: 'Bread diabetic'}, {name: 'Whole soy flour'}]);
+
+			result = this.collection.filterByName('rye bread');
+			expect(result.length).to.equal(1);
+
+			result = this.collection.filterByName('bread rye');
+			expect(result.length).to.equal(1);
+
+			result = this.collection.filterByName('flour soy whole');
 			expect(result.length).to.equal(1);
         });
     });
