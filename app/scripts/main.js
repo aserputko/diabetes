@@ -36,15 +36,15 @@ require([
     'backbone',
     'mediator',
     'rivets-config',
-    'views/application-view'
-], function (Backbone, mediator, rivets, ApplicationView) {
+    'views/application-view',
+    'helpers/is-mobile'
+], function (Backbone, mediator, rivets, ApplicationView, isMobile) {
     var $el = $('#container'), view;
 
     view = new ApplicationView({el: $el});
     view.render();
 
-    //TODO: use utilit to recognize devise
-    if (/mobile/i.test(navigator.userAgent)) {
+    if (isMobile.any()) {
         setTimeout(function () {
             window.scrollTo(0, 1);
         }, 1000);
