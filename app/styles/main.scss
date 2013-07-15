@@ -1,6 +1,26 @@
 @import 'sass-bootstrap/lib/bootstrap';
+@import 'sass-bootstrap/lib/responsive';
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+$backgroundColor: #13a7c7;
+
+body {
+	background: $backgroundColor;
 }
+
+
+@import 'bread-unit-table/search';
+@import 'bread-unit-table/items';
+
+#container {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+@media (max-width: 767px) {
+
+	body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
