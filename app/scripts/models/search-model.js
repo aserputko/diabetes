@@ -25,7 +25,7 @@ define([
 		},
 
 		setPlaceholder: function (value, options) {
-			return this.set({placeholder: value}, options);
+			this.set({placeholder: value}, options);
 		},
 
 		getQuery: function () {
@@ -33,7 +33,7 @@ define([
 		},
 
 		setQuery: function (value, options) {
-			return this.set({query: value}, options);
+			this.set({query: value}, options);
 		}
 	});
 

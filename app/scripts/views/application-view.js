@@ -14,6 +14,10 @@ define([
 
 		template: JST['app/scripts/templates/application.ejs'],
 
+		/**
+		 * Initialize views <SearchView> and <BreadUnitCollectionView>
+		 * @constrictor
+		 */
 		initialize: function () {
 			this.searchView              = new SearchView();
 			this.breadUnitCollectionView = new BreadUnitCollectionView();
@@ -28,6 +32,9 @@ define([
 			return this;
 		},
 
+		/**
+		 * Render child views (searchView and breadUnitCollectionView)
+		 */
 		postRender: function () {
 			this.$el.append(this.searchView.render().el);
 			this.$el.append(this.breadUnitCollectionView.render().el);

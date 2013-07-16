@@ -21,7 +21,7 @@ define([
 		},
 
 		setName: function (value, options) {
-			return this.set({name: value}, options);
+			this.set({name: value}, options);
 		},
 
 		getMeasure: function () {
@@ -29,7 +29,7 @@ define([
 		},
 
 		setMeasure: function (value, options) {
-			return this.set({measure: value}, options);
+			this.set({measure: value}, options);
 		},
 
 		getWeight: function () {
@@ -37,7 +37,7 @@ define([
 		},
 
 		setWeight: function (value, options) {
-			return this.set({weight: value}, options);
+			this.set({weight: value}, options);
 		},
 
 		getKcal: function () {
@@ -45,7 +45,7 @@ define([
 		},
 
 		setKcal: function (value, options) {
-			return this.set({kcal: value}, options);
+			this.set({kcal: value}, options);
 		}
 	});
 
