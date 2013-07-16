@@ -28,7 +28,8 @@ require.config({
         underscore: '../bower_components/underscore-amd/underscore',
         mediator: 'vendor/backbone-mediator',
         rivets: 'vendor/rivets',
-        bootstrap: 'vendor/bootstrap'
+        bootstrap: 'vendor/bootstrap',
+        templates: '../.tmp/scripts/templates'
     }
 });
 
@@ -43,6 +44,7 @@ require([
 
     view = new ApplicationView({el: $el});
     view.render();
+    view.postRender();
 
     if (isMobile.any()) {
         setTimeout(function () {

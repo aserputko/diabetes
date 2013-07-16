@@ -17,20 +17,14 @@ define([
         initialize: function () {
 			this.searchView              = new SearchView();
 			this.breadUnitCollectionView = new BreadUnitCollectionView();
-
-			this.on('post-render', this.postRender, this);
         },
 
         /**
          * Render the view template from model data,
          * and updates this.el with the new HTML.
-         * Trigger events 'post-render' to make rendering
-         * when base DOM is presented.
          */
         render: function () {
 			this.$el.html(this.template());
-
-			this.trigger('post-render');
 			return this;
         },
 
@@ -40,6 +34,8 @@ define([
 
             this.searchView.start();
 			this.breadUnitCollectionView.sync();
+
+            return this;
         }
     });
 
