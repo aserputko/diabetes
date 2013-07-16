@@ -20,14 +20,29 @@ define([
 			var result = [];
 
 			if (str && str !== '') {
-				this.filter(function (model) {
-					var name, matches;
-					name = model.getName();
-					matches = name.toUpperCase().match(str.toUpperCase());
-					if (matches) {
-						model.trigger('show');
+				this.each(function (model) {
+					var name, matches, query;
+
+					// Get name of Bread Unit, change the name to upper case and escape it.
+					name = model.getName().toUpperCase();
+					name = window.escape(name);
+
+					// Change the query to upper case and escape it too.
+					query = str.toUpperCase();
+					query = query.split(' ');
+
+					// Find matches
+					matches = _.map(query, function (element) {
+						element = window.escape(element);
+						return name.match(element) ? true : false;
+					});
+
+					// Set result to temporary storage and trigger `show` event.
+					if (_.every(matches)) {
 						result.push(model);
+						model.trigger('show');
 					} else {
+						// if don't have matches just trigger `hide` event.
 						model.trigger('hide');
 					}
 				});
