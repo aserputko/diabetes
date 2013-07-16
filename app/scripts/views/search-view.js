@@ -30,7 +30,7 @@ define([
         },
 
         start: function () {
-            rivets.bind(this.$el, { model: this.model, view: this}, this);
+            rivets.bind(this.$el, {model: this.model, view: this}, this);
         },
 
         setQuery: function (element, self) {

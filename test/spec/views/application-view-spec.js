@@ -13,7 +13,7 @@ require(['views/application-view'], function (ApplicationView) {
 			$('#container').remove();
 		});
 
-		it('should be tied to a DOM element when created, based off the property provided.', function () {
+		it('should be tied to a DOM element when created, based off the property provided', function () {
 			expect(this.view.el.tagName.toLowerCase()).to.equal('div');
 		});
 
