@@ -1,12 +1,12 @@
 /*global define*/
 
 define([
-    'underscore',
-    'backbone'
+	'underscore',
+	'backbone'
 ], function (_, Backbone) {
-    'use strict';
+	'use strict';
 
-    var BreadUnitModel = Backbone.Model.extend({
+	var BreadUnitModel = Backbone.Model.extend({
 
 		defaults: {
 			name: '',
@@ -15,14 +15,14 @@ define([
 			kcal: ''
 		},
 
-        /** Getters and Setters */
-        getName: function () {
+		/** Getters and Setters */
+		getName: function () {
 			return this.get('name');
-        },
+		},
 
-        setName: function (value, options) {
+		setName: function (value, options) {
 			return this.set({name: value}, options);
-        },
+		},
 
 		getMeasure: function () {
 			return this.get('measure');
@@ -47,7 +47,7 @@ define([
 		setKcal: function (value, options) {
 			return this.set({kcal: value}, options);
 		}
-    });
+	});
 
-    return BreadUnitModel;
+	return BreadUnitModel;
 });

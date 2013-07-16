@@ -1,20 +1,20 @@
 /*global define*/
 
 define([
-    'underscore',
-    'backbone',
-    'models/bread-unit-model',
-    'collections/bu-mock'
+	'underscore',
+	'backbone',
+	'models/bread-unit-model',
+	'collections/bu-mock'
 ], function (_, Backbone, BreadUnitModel, mock) {
-    'use strict';
+	'use strict';
 
-    var BreadUnitCollection = Backbone.Collection.extend({
+	var BreadUnitCollection = Backbone.Collection.extend({
 
-        model: BreadUnitModel,
+		model: BreadUnitModel,
 
-        initialize: function () {
+		initialize: function () {
 			Backbone.Mediator.sub('SearchModel:change:query', $.proxy(this.filterByName, this));
-        },
+		},
 
 		filterByName: function (str) {
 			var result = [];
@@ -59,7 +59,7 @@ define([
 		sync: function (method, collection, options) {
 			options.success(mock);
 		}
-    });
+	});
 
-    return BreadUnitCollection;
+	return BreadUnitCollection;
 });

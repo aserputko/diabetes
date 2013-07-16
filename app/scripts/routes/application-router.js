@@ -1,16 +1,16 @@
 /*global define*/
 
 define([
-    'jquery',
-    'backbone'
+	'jquery',
+	'backbone'
 ], function ($, Backbone) {
-    'use strict';
+	'use strict';
 
-    var ApplicationRouter = Backbone.Router.extend({
-        routes: {
-        }
+	var ApplicationRouter = Backbone.Router.extend({
+		routes: {
+		}
 
-    });
+	});
 
-    return ApplicationRouter;
+	return ApplicationRouter;
 });
