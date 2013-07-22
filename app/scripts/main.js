@@ -29,7 +29,8 @@ require.config({
 		mediator: 'vendor/backbone-mediator',
 		rivets: 'vendor/rivets',
 		bootstrap: 'vendor/bootstrap',
-		templates: '../.tmp/scripts/templates'
+		templates: '../.tmp/scripts/templates',
+		localstorage: 'vendor/backbone.localStorage'
 	}
 });
 
