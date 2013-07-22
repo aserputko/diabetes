@@ -4,7 +4,7 @@ define([
 	'underscore',
 	'backbone',
 	'models/bread-unit-model',
-	'collections/bu-mock'
+	'mocks/bu-mock'
 ], function (_, Backbone, BreadUnitModel, mock) {
 	'use strict';
 
