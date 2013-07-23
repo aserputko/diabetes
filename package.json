@@ -1,7 +1,9 @@
 {
   "name": "diabetes",
-  "version": "1.1.6",
-  "dependencies": {},
+  "version": "1.1.7",
+  "dependencies": {
+    "phantomjs": "~1.9.0-1"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.0",
