@@ -62,7 +62,7 @@ require(['views/bread-unit-collection-view'], function (BreadUnitCollectionView)
 
 		it('should call "addAll" method when event "sync" was triggered', function () {
 			this.view.collection.add([{name: 'banana'}, {name: 'orange'}, {name: 'bread'}]);
-			this.view.collection.trigger('sync');
+			this.view.collection.trigger('reset');
 
 			expect(this.view.$('li').length).to.equal(3);
 		});
