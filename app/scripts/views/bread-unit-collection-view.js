@@ -58,8 +58,8 @@ define([
 		/**
 		 * Create one model<BreadUnitModel>
 		 */
-		createOne: function (model, options) {
-			this.collection.create(model, options);
+		createOne: function (model) {
+			this.collection.create(model, {silent: true});
 		},
 
 		/**

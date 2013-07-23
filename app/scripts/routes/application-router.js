@@ -3,9 +3,10 @@
 define([
 	'jquery',
 	'backbone',
+	'helpers/is-mobile',
 	'views/application-view',
-	'helpers/is-mobile'
-], function ($, Backbone, ApplicationView, isMobile) {
+	'views/new-bread-unit-view'
+], function ($, Backbone, isMobile, ApplicationView, NewBreadUnitView) {
 	'use strict';
 
 	var ApplicationRouter = Backbone.Router.extend({
@@ -16,12 +17,12 @@ define([
 		},
 
 		routes: {
-			'': 'home',
+			'': 'index',
 			'create': 'create'
 		},
 
 		runController: function (Controller, options) {
-			if (!this.controller instanceof Controller && this.controller) {
+			if (!(this.controller instanceof Controller) && this.controller) {
 				this.controller.trigger('remove');
 			}
 
@@ -29,7 +30,7 @@ define([
 			this.controller.trigger('render');
 		},
 
-		home: function () {
+		index: function () {
 			this.runController(ApplicationView, {el: this.el});
 
 			if (isMobile.any()) {
@@ -40,7 +41,7 @@ define([
 		},
 
 		create: function () {
-			
+			this.runController(NewBreadUnitView, {el: this.el});
 		}
 
 	});
