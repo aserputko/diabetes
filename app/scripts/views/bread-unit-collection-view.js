@@ -1,4 +1,4 @@
-/*global define, localStorege */
+/*global define */
 
 define([
 	'jquery',
@@ -58,8 +58,8 @@ define([
 		/**
 		 * Create one model<BreadUnitModel>
 		 */
-		createOne: function (model) {
-			this.collection.create(model);
+		createOne: function (model, options) {
+			this.collection.create(model, options);
 		},
 
 		/**

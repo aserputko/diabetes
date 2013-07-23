@@ -21,6 +21,10 @@ define([
 		initialize: function () {
 			this.searchView              = new SearchView();
 			this.breadUnitCollectionView = new BreadUnitCollectionView();
+
+			this.on('render', this.render, this);
+			this.on('render', this.postRender, this);
+			this.on('remove', this.remove, this);
 		},
 
 		/**
@@ -42,6 +46,14 @@ define([
 			this.searchView.start();
 			this.breadUnitCollectionView.sync();
 
+			return this;
+		},
+
+		remove: function() {
+			this.searchView.remove();
+			this.breadUnitCollectionView.remove();
+			this.$el.remove();
+			this.stopListening();
 			return this;
 		}
 	});

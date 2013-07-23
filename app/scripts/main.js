@@ -39,19 +39,10 @@ require([
 	'localstorage',
 	'mediator',
 	'rivets-config',
-	'views/application-view',
-	'helpers/is-mobile'
-], function (Backbone, localstorage, mediator, rivets, ApplicationView, isMobile) {
-	var $el = $('#container'), view;
+	'routes/application-router'
+], function (Backbone, localstorage, mediator, rivets, ApplicationRouter) {
+	var router;
 
-	view = new ApplicationView({el: $el});
-	view.render();
-	view.postRender();
-
-	if (isMobile.any()) {
-		setTimeout(function () {
-			window.scrollTo(0, 1);
-		}, 1000);
-	}
+	router = new ApplicationRouter();
 	Backbone.history.start();
 });
