@@ -1,8 +1,15 @@
-language: node_js
+language:
+	- node_js
+	- ruby
+
 node_js:
     - 0.8
+rvm:
+	- 1.9.3
+
 before_script:
     - npm install -g grunt-cli
+    - gem install compass
 script:
     - grunt test
 
