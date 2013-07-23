@@ -50,6 +50,11 @@ require(['views/bread-unit-collection-view'], function (BreadUnitCollectionView)
 			expect(this.view.sync()).to.equal();
 		});
 
+		it('should have "createOne" method', function () {
+			expect(this.view.createOne).to.not.equal(undefined);
+			expect(this.view.createOne()).to.equal();
+		});
+
 		it('should have "addAll" method', function () {
 			expect(this.view.addAll).to.not.equal(undefined);
 			expect(this.view.addAll()).to.equal();

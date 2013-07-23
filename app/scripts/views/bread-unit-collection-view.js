@@ -1,4 +1,4 @@
-/*global define*/
+/*global define, localStorege */
 
 define([
 	'jquery',
@@ -6,8 +6,9 @@ define([
 	'backbone',
 	'templates',
 	'collections/bread-unit-collection',
-	'views/bread-unit-view'
-], function ($, _, Backbone, JST, BreadUnitCollection, BreadUnitView) {
+	'views/bread-unit-view',
+	'mocks/bu-mock'
+], function ($, _, Backbone, JST, BreadUnitCollection, BreadUnitView, mock) {
 	'use strict';
 
 	var BreadUnitCollectionView = Backbone.View.extend({
@@ -27,6 +28,7 @@ define([
 		 */
 		initialize: function () {
 			this.collection = new BreadUnitCollection();
+
 			this.listenTo(this.collection, 'sync', this.addAll);
 			this.listenTo(this.collection, 'filterByName', this.filterByName);
 		},
@@ -44,7 +46,20 @@ define([
 		 * Fetch data from Server-Side or from localStorege
 		 */
 		sync: function () {
+			//TODO: create some Model or Util for isFirstTime param
+			if (!localStorage.getItem('isFirstTime')) {
+				_.each(mock, this.createOne, this);
+				localStorage.setItem('isFirstTime', true);
+			}
+
 			this.collection.fetch();
+		},
+
+		/**
+		 * Create one model<BreadUnitModel>
+		 */
+		createOne: function (model) {
+			this.collection.create(model);
 		},
 
 		/**

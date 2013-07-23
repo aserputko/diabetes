@@ -3,14 +3,15 @@
 define([
 	'underscore',
 	'backbone',
-	'models/bread-unit-model',
-	'mocks/bu-mock'
-], function (_, Backbone, BreadUnitModel, mock) {
+	'models/bread-unit-model'
+], function (_, Backbone, BreadUnitModel) {
 	'use strict';
 
 	var BreadUnitCollection = Backbone.Collection.extend({
 
 		model: BreadUnitModel,
+
+		localStorage: new Backbone.LocalStorage('bread-unit'),
 
 		initialize: function () {
 			Backbone.Mediator.sub('SearchModel:change:query', $.proxy(this.filterByName, this));
@@ -54,10 +55,6 @@ define([
 			}
 
 			return result;
-		},
-
-		sync: function (method, collection, options) {
-			options.success(mock);
 		}
 	});
 

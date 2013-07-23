@@ -36,11 +36,12 @@ require.config({
 
 require([
 	'backbone',
+	'localstorage',
 	'mediator',
 	'rivets-config',
 	'views/application-view',
 	'helpers/is-mobile'
-], function (Backbone, mediator, rivets, ApplicationView, isMobile) {
+], function (Backbone, localstorage, mediator, rivets, ApplicationView, isMobile) {
 	var $el = $('#container'), view;
 
 	view = new ApplicationView({el: $el});
