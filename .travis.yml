@@ -3,9 +3,9 @@ node_js:
     - 0.8
 before_script:
     - npm install -g grunt-cli
-    - gem install compass
+    - gem install compass 
 script:
-    - grunt test
+    - grunt test --force
 
 notifications:
   email:
