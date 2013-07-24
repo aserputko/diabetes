@@ -6,7 +6,7 @@ before_script:
     - npm install -g generator-backbone
     - gem install compass 
 script:
-    - grunt test --force
+    - grunt test
 
 notifications:
   email:
