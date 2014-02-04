@@ -6,7 +6,7 @@ define([
 ], function (_, Backbone) {
 	'use strict';
 
-	var ApplicationModel = Backbone.Model.extend({});
+	var SyncStatus = Backbone.Model.extend({});
 
-	return ApplicationModel;
+	return SyncStatus;
 });

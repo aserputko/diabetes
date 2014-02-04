@@ -1,7 +1,7 @@
 /*global describe, it, beforeEach, afterEach, require, expect */
 'use strict';
 require(['views/search-view'], function (SearchView) {
-    describe('SearchView', function () {
+	describe('SearchView', function () {
 
 		beforeEach(function () {
 			$('body').append('<div id="container" class="diabetes container-fluid"></div>');
@@ -50,5 +50,5 @@ require(['views/search-view'], function (SearchView) {
 			expect(this.view.setQuery({}, {model: this.view.model, view: this.view})).to.equal();
 		});
 		
-    });
+	});
 });

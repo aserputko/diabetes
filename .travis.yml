@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+    - 0.8
+before_script:
+    - npm install -g yo grunt-cli bower
+    - npm install -g generator-backbone
+    - gem install compass 
+script:
+    - grunt test
+
+notifications:
+  email:
+    recipients:
+      - aserputko@gmail.com
+    on_success: never
+    on_failure: always

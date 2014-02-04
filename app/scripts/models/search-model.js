@@ -1,41 +1,41 @@
 /*global define*/
 
 define([
-    'underscore',
-    'backbone'
+	'underscore',
+	'backbone'
 ], function (_, Backbone) {
-    'use strict';
+	'use strict';
 
-    var SearchModel = Backbone.Model.extend({
+	var SearchModel = Backbone.Model.extend({
 
 		defaults: {
 			placeholder: 'Search...',
 			query: ''
 		},
 
-        initialize: function () {
-            this.on('change:query', function () {
-                Backbone.Mediator.pub('SearchModel:change:query', this.getQuery());
-            }, this);
-        },
+		initialize: function () {
+			this.on('change:query', function () {
+				Backbone.Mediator.pub('SearchModel:change:query', this.getQuery());
+			}, this);
+		},
 
-        /** Getters and Setters */
-        getPlaceholder: function () {
+		/** Getters and Setters */
+		getPlaceholder: function () {
 			return this.get('placeholder');
-        },
+		},
 
-        setPlaceholder: function (value, options) {
-			return this.set({placeholder: value}, options);
-        },
+		setPlaceholder: function (value, options) {
+			this.set({placeholder: value}, options);
+		},
 
-        getQuery: function () {
+		getQuery: function () {
 			return this.get('query');
-        },
+		},
 
-        setQuery: function (value, options) {
-			return this.set({query: value}, options);
-        }
-    });
+		setQuery: function (value, options) {
+			this.set({query: value}, options);
+		}
+	});
 
-    return SearchModel;
+	return SearchModel;
 });

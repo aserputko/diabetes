@@ -1,43 +1,62 @@
 /*global define*/
 
 define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'templates',
-    'views/search-view',
-    'views/bread-unit-collection-view'
+	'jquery',
+	'underscore',
+	'backbone',
+	'templates',
+	'views/search-view',
+	'views/bread-unit-collection-view'
 ], function ($, _, Backbone, JST, SearchView, BreadUnitCollectionView) {
-    'use strict';
+	'use strict';
 
-    var ApplicationView = Backbone.View.extend({
+	var ApplicationView = Backbone.View.extend({
 
-        template: JST['app/scripts/templates/application.ejs'],
+		template: JST['app/scripts/templates/application.ejs'],
 
-        initialize: function () {
+		/**
+		 * Initialize views <SearchView> and <BreadUnitCollectionView>
+		 * @constrictor
+		 */
+		initialize: function () {
 			this.searchView              = new SearchView();
 			this.breadUnitCollectionView = new BreadUnitCollectionView();
-        },
 
-        /**
-         * Render the view template from model data,
-         * and updates this.el with the new HTML.
-         */
-        render: function () {
+			this.on('render', this.render, this);
+			this.on('render', this.postRender, this);
+			this.on('remove', this.remove, this);
+		},
+
+		/**
+		 * Render the view template from model data,
+		 * and updates this.el with the new HTML.
+		 */
+		render: function () {
 			this.$el.html(this.template());
 			return this;
-        },
+		},
 
-        postRender: function () {
-            this.$el.append(this.searchView.render().el);
-            this.$el.append(this.breadUnitCollectionView.render().el);
+		/**
+		 * Render child views (searchView and breadUnitCollectionView)
+		 */
+		postRender: function () {
+			this.$el.append(this.searchView.render().el);
+			this.$el.append(this.breadUnitCollectionView.render().el);
 
-            this.searchView.start();
+			this.searchView.start();
 			this.breadUnitCollectionView.sync();
 
-            return this;
-        }
-    });
+			return this;
+		},
 
-    return ApplicationView;
+		remove: function() {
+			this.searchView.remove();
+			this.breadUnitCollectionView.remove();
+			this.$el.remove();
+			this.stopListening();
+			return this;
+		}
+	});
+
+	return ApplicationView;
 });
